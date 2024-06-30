@@ -15,6 +15,9 @@ const io = new Server(server, {
     }
 
 })
+app.get("/", (req, res) => {
+    res.send("hello")
+})
 
 io.on("connection", (socket) => {
     console.log(`user connected with id ${socket.id}`)
@@ -28,6 +31,7 @@ io.on("connection", (socket) => {
     })
 
 })
+
 
 server.listen(8000, () => {
     console.log(`listening on server 8000`)
